@@ -1,0 +1,309 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "TP-Alquilando Api Documentation",
+        "description": "",
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/users/": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Register User",
+                "operationId": "App\\Http\\Controllers\\UserController::register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "the name",
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "description": "the surname",
+                                        "type": "string"
+                                    },
+                                    "user": {
+                                        "description": "the username",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "the email",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "the password",
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "description": "the password confirmation",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "",
+                                    "surname": "",
+                                    "user": "",
+                                    "email": "",
+                                    "password": "",
+                                    "password_confirmation": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Register OK.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get users list",
+                "responses": {
+                    "200": {
+                        "description": "ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "default",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/users/{user_id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get user",
+                "operationId": "App\\Http\\Controllers\\UserController::getById",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "default",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Edit user",
+                "operationId": "App\\Http\\Controllers\\UserController::edit",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "the name",
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "description": "the surname",
+                                        "type": "string"
+                                    },
+                                    "user": {
+                                        "description": "the username",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "the email",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "the password",
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "description": "the password confirmation",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "",
+                                    "surname": "",
+                                    "user": "",
+                                    "email": "",
+                                    "password": "",
+                                    "password_confirmation": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "default",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Remove user",
+                "operationId": "App\\Http\\Controllers\\UserController::remove",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "default",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearer": {
+                "type": "http",
+                "description": "Authorization token obtained from logging in.",
+                "name": "Authorization",
+                "in": "header",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": {
+        "bearer": {
+            "type": "http",
+            "description": "Authorization token obtained from logging in.",
+            "name": "Authorization",
+            "in": "header",
+            "scheme": "bearer"
+        }
+    }
+}
