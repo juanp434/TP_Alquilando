@@ -12,4 +12,4 @@
 
 ## Imagen de la API
 
-<img src="/Capture.png" alt="Pic" height="200" width="200">
+<img src="https://i.ibb.co/frGVj9W/Capture.png" alt="Capture" border="0">
