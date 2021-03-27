@@ -12,4 +12,4 @@
 
 ## Imagen de la API
 
-<img src="{{URL::asset('/Capture.png')}}" alt="profile Pic" height="200" width="200">
+<img src="/Capture.png" alt="Pic" height="200" width="200">
