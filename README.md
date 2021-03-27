@@ -9,3 +9,7 @@
 - Se debe correr el siguiente comando: php artisan l5-swagger:generate
 - Luego php artisan serve
 - Abrir la url http://localhost:8000/api/documentation y ya veremos la API
+
+## Imagen de la API
+
+{{HTML::image('/Capture.png')}}
